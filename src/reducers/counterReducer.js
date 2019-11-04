@@ -1,4 +1,4 @@
-import { COUNT_UP, COUNT_DOWN } from "../actions/types";
+import { COUNT_UP, COUNT_DOWN, RESET_COUNT } from "../actions/types";
 
 const initialState = {
     counter: 0
@@ -16,6 +16,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 counter: state.counter - 1
+            }
+        case RESET_COUNT:
+            return {
+                ...state,
+                counter: 0
             }
         default:
             return state
